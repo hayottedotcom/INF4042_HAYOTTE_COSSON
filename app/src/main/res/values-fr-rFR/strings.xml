@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Au Bon Terroir De Chez Nous</string>
+    <string name="list_name">Liste des recettes</string>
+    <string name="messageBienvenue">Bienvenue\nAu Bon Terroir De Chez Nous</string>
+    <string name="openNewActivityButton">Ouvrir la version Web</string>
+    <string name="beerButton">Recettes</string>
+    <string name="title_activity_recette">Les Recettes</string>
+    <string name="credit">Application créée par Florent Cosson et Adrien Hayotte</string>
+
+</resources>

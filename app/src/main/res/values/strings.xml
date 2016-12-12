@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Au Bon Terroir De Chez Nous</string>
+    <string name="list_name">Cook Book</string>
+    <string name="messageBienvenue">Welcome\nAu Bon Terroir De Chez Nous</string>
+    <string name="openNewActivityButton">Open Web version</string>
+    <string name="beerButton">Cook Book</string>
+    <string name="title_activity_recette">Cook Book</string>
+    <string name="credit">App developped by Florent Cosson and Adrien Hayotte</string>
+</resources>

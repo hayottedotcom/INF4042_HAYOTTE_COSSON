@@ -3,10 +3,8 @@ package fr.esiea.android.projet.mobile;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.os.Parcelable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,28 +17,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BeerActivity extends AppCompatActivity {
+public class PlatActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beer_activity);
+        setContentView(R.layout.activity_plat_activity);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -49,9 +42,9 @@ public class BeerActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.rv_biere);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        IntentFilter intentFilter = new IntentFilter(BierUpdate.BIERS_UPDATE);
-        LocalBroadcastManager.getInstance(this).registerReceiver(new BierUpdate(ba),intentFilter);
-        GetBiersServices.startActionGetAllBiers(this);
+        IntentFilter intentFilter = new IntentFilter(PatUpdate.BIERS_UPDATE);
+        LocalBroadcastManager.getInstance(this).registerReceiver(new PatUpdate(ba),intentFilter);
+        GetPlatServices.startActionGetAllBiers(this);
 
         recyclerView.setAdapter(ba);
 
@@ -74,7 +67,7 @@ public class BeerActivity extends AppCompatActivity {
         @Override
         public BierHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater li = LayoutInflater.from(parent.getContext());
-            return new BierHolder(li.inflate(R.layout.rv_bier_element, parent, false));
+            return new BierHolder(li.inflate(R.layout.rv_plat_element, parent, false));
         }
 
         @Override
@@ -96,8 +89,9 @@ public class BeerActivity extends AppCompatActivity {
                         try {
                             intent.putExtra("titre",bieres.getJSONObject(position).getString("nom_recette"));
                             intent.putExtra("nom_region", bieres.getJSONObject(position).getString("nom_region"));
-                            intent.putExtra("tmpPrep", bieres.getJSONObject(position).getString("temps_preparation_min"));
-                            intent.putExtra("tmpCuis", bieres.getJSONObject(position).getString("temps_cuisson_min"));
+                            intent.putExtra("tmpPrep", bieres.getJSONObject(position).getJSONObject("recette_txt").getJSONObject("preparation").getString("temps_preparation_min"));
+                            intent.putExtra("recette", bieres.getJSONObject(position).getJSONObject("recette_txt").getString("ingredients"));
+                            intent.putExtra("tmpCuis", bieres.getJSONObject(position).getJSONObject("recette_txt").getJSONObject("preparation").getString("temps_cuisson_min"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

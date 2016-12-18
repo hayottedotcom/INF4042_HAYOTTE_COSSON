@@ -2,16 +2,11 @@ package fr.esiea.android.projet.mobile;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
 public class RecetteActivity extends AppCompatActivity {
@@ -27,6 +22,7 @@ public class RecetteActivity extends AppCompatActivity {
         TextView    nomRegion = (TextView) findViewById(R.id.nomRegion);
         TextView    tmpPrep = (TextView) findViewById(R.id.tmpPrep);
         TextView    tmpCuis = (TextView) findViewById(R.id.tmpCuis);
+        TextView    recette = (TextView) findViewById(R.id.recetteTxt);
 
 
         Bundle extras = getIntent().getExtras();
@@ -37,6 +33,7 @@ public class RecetteActivity extends AppCompatActivity {
         nomRegion.setText(getIntent().getStringExtra("nom_region"));
         tmpPrep.setText(getIntent().getStringExtra("tmpPrep"));
         tmpCuis.setText(getIntent().getStringExtra("tmpCuis"));
+        recette.setText(getIntent().getStringExtra("recette"));
 
         String name_recette = txtRecette.getText().toString();
         setTitle(name_recette);
@@ -47,7 +44,7 @@ public class RecetteActivity extends AppCompatActivity {
 
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), BeerActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), PlatActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
     }

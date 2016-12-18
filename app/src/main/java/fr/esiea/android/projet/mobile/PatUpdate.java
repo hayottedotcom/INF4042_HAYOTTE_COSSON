@@ -8,10 +8,10 @@ import android.widget.Toast;
 
 import static android.content.ContentValues.TAG;
 
-public class BierUpdate extends BroadcastReceiver{
+public class PatUpdate extends BroadcastReceiver{
     public static final String BIERS_UPDATE = "fr.esiea.android.projet.mobile.BIERS_UPDATE";
-    private BeerActivity.BiersAdapter ba;
-    public BierUpdate(BeerActivity.BiersAdapter bi) {
+    private PlatActivity.BiersAdapter ba;
+    public PatUpdate(PlatActivity.BiersAdapter bi) {
         ba = bi;
     }
 

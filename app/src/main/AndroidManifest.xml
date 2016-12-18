@@ -21,11 +21,11 @@
         </activity>
 
         <service
-            android:name=".GetBiersServices"
+            android:name=".GetPlatServices"
             android:exported="false" />
 
         <activity
-            android:name=".BeerActivity"
+            android:name=".PlatActivity"
             android:screenOrientation="portrait"
             android:label="@string/list_name" />
         <activity

@@ -1,40 +1,30 @@
 package fr.esiea.android.projet.mobile;
 
 import android.app.IntentService;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 
-import static android.provider.Telephony.Carriers.NAME;
-
-public class GetBiersServices extends IntentService {
+public class GetPlatServices extends IntentService {
 
     public static final String ACTION_GET_ALL_BIERS = "fr.esiea.projet.mobile.ACTION_GET_ALL_BIERS";
 
-    public GetBiersServices() {
-        super("GetBiersServices");
+    public GetPlatServices() {
+        super("GetPlatServices");
     }
 
     public static void startActionGetAllBiers(Context context) {
-        Intent intent = new Intent(context, GetBiersServices.class);
+        Intent intent = new Intent(context, GetPlatServices.class);
         intent.setAction(ACTION_GET_ALL_BIERS);
         context.startService(intent);
     }
@@ -53,7 +43,7 @@ public class GetBiersServices extends IntentService {
     /*private void getAllBiers() {
         Log.d("LOOOOOG", "This is Service Downloader!!!:D");
 
-        BeerDbHelper db_helper = new BeerDbHelper(this);
+        PlatDbHelper db_helper = new PlatDbHelper(this);
         SQLiteDatabase db = db_helper.getWritableDatabase();
 
         URL url;
@@ -73,10 +63,10 @@ public class GetBiersServices extends IntentService {
                 for(int i =0; i < jsa.length(); i++){
                     JSONObject jso = (JSONObject)jsa.get(i);
                     ContentValues values = new ContentValues();
-                    values.put(BeerDbHelper.BeerEntry.CBIERNAME, jso.getString("name"));
-                    values.put(BeerDbHelper.BeerEntry.CDESC, jso.getString("description"));
+                    values.put(PlatDbHelper.BeerEntry.CBIERNAME, jso.getString("name"));
+                    values.put(PlatDbHelper.BeerEntry.CDESC, jso.getString("description"));
 
-                    db.insert(BeerDbHelper.BeerEntry.TABLE_NAME, null, values);
+                    db.insert(PlatDbHelper.BeerEntry.TABLE_NAME, null, values);
                 }
             }
         } catch (MalformedURLException e) {
@@ -103,7 +93,7 @@ public class GetBiersServices extends IntentService {
                 copyInputStreamToFile(conn.getInputStream(),
                         new File(getCacheDir(), "recettes.json"));
                 Log.d("TAG", "Recettes téléchargées !");
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(BierUpdate.BIERS_UPDATE));
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(PatUpdate.BIERS_UPDATE));
 
 
             }

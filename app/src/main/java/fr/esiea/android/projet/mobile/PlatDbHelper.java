@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
-public class BeerDbHelper extends SQLiteOpenHelper {
+public class PlatDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Beer.db";
 
@@ -20,7 +20,7 @@ public class BeerDbHelper extends SQLiteOpenHelper {
                     BeerEntry.CDESC + TEXT_TYPE + " )";
 
 
-    public BeerDbHelper(Context context) {
+    public PlatDbHelper(Context context) {
         super(context, DATABASE_NAME, null,DATABASE_VERSION);
     }
 

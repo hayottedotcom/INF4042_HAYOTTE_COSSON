@@ -9,5 +9,7 @@
     <string name="credit">Application créée par Florent Cosson et Adrien Hayotte</string>
     <string name="CuissonMin">Temps de Cuisson (min) :\u0020</string>
     <string name="PrepMin">Preparation (min) :\u0020</string>
+    <string name="ingName">Ingrédient</string>
+    <string name="prepName">Preparation</string>
 
 </resources>

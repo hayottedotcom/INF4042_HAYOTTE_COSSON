@@ -65,6 +65,7 @@
                 android:text="@string/CuissonMin"/>
             <TextView
                 android:textColor="@android:color/white"
+                android:textStyle="normal|bold"
                 android:layout_toRightOf="@id/tmpCuisLabel"
                 android:text="TMP_CUIS"
                 android:layout_width="wrap_content"
@@ -84,6 +85,7 @@
                 android:text="@string/PrepMin"/>
             <TextView
                 android:textColor="@android:color/white"
+                android:textStyle="normal|bold"
                 android:layout_toRightOf="@id/tmpPrepLabel"
                 android:text="TMP_PREP"
                 android:layout_width="wrap_content"
@@ -95,15 +97,41 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:padding="4dp"
         android:layout_weight="2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="TextView"
+            android:text="@string/ingName"
+            android:id="@+id/ingName"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:text="INGREDIENTS_TXT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/recetteTxt" />
+            android:layout_below="@id/ingName"
+            android:id="@+id/ingredients" />
+
+        <TextView
+            android:text="@string/prepName"
+            android:id="@+id/prepName"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ingredients"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:text="PREPARATION_TXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prepName"
+            android:id="@+id/preparation" />
 
     </RelativeLayout>
 

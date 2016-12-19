@@ -8,4 +8,6 @@
     <string name="credit">App developped by Florent Cosson and Adrien Hayotte</string>
     <string name="CuissonMin">Baking time (min) :\u0020</string>
     <string name="PrepMin">Preparation (min) :\u0020</string>
+    <string name="ingName">Foodstuff</string>
+    <string name="prepName">Preparation</string>
 </resources>

@@ -22,7 +22,8 @@ public class RecetteActivity extends AppCompatActivity {
         TextView    nomRegion = (TextView) findViewById(R.id.nomRegion);
         TextView    tmpPrep = (TextView) findViewById(R.id.tmpPrep);
         TextView    tmpCuis = (TextView) findViewById(R.id.tmpCuis);
-        TextView    recette = (TextView) findViewById(R.id.recetteTxt);
+        TextView    recette = (TextView) findViewById(R.id.ingredients);
+        TextView    preparation = (TextView) findViewById(R.id.preparation);
 
 
         Bundle extras = getIntent().getExtras();
@@ -33,7 +34,8 @@ public class RecetteActivity extends AppCompatActivity {
         nomRegion.setText(getIntent().getStringExtra("nom_region"));
         tmpPrep.setText(getIntent().getStringExtra("tmpPrep"));
         tmpCuis.setText(getIntent().getStringExtra("tmpCuis"));
-        recette.setText(getIntent().getStringExtra("recette"));
+        recette.setText(getIntent().getStringExtra("ingredients"));
+        preparation.setText(getIntent().getStringExtra("preparation"));
 
         String name_recette = txtRecette.getText().toString();
         setTitle(name_recette);

@@ -90,7 +90,8 @@ public class PlatActivity extends AppCompatActivity {
                             intent.putExtra("titre",bieres.getJSONObject(position).getString("nom_recette"));
                             intent.putExtra("nom_region", bieres.getJSONObject(position).getString("nom_region"));
                             intent.putExtra("tmpPrep", bieres.getJSONObject(position).getJSONObject("recette_txt").getJSONObject("preparation").getString("temps_preparation_min"));
-                            intent.putExtra("recette", bieres.getJSONObject(position).getJSONObject("recette_txt").getString("ingredients"));
+                            intent.putExtra("ingredients", bieres.getJSONObject(position).getJSONObject("recette_txt").getString("ingredients"));
+                            intent.putExtra("preparation", bieres.getJSONObject(position).getJSONObject("recette_txt").getJSONObject("preparation").getString("conseil"));
                             intent.putExtra("tmpCuis", bieres.getJSONObject(position).getJSONObject("recette_txt").getJSONObject("preparation").getString("temps_cuisson_min"));
                         } catch (JSONException e) {
                             e.printStackTrace();

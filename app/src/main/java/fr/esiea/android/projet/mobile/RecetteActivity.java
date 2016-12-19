@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class RecetteActivity extends AppCompatActivity {
         TextView    tmpCuis = (TextView) findViewById(R.id.tmpCuis);
         TextView    recette = (TextView) findViewById(R.id.ingredients);
         TextView    preparation = (TextView) findViewById(R.id.preparation);
+        preparation.setMovementMethod(new ScrollingMovementMethod());
 
 
         Bundle extras = getIntent().getExtras();

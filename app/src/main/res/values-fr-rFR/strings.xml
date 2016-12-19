@@ -7,5 +7,7 @@
     <string name="beerButton">Recettes</string>
     <string name="title_activity_recette">Les Recettes</string>
     <string name="credit">Application créée par Florent Cosson et Adrien Hayotte</string>
+    <string name="CuissonMin">Temps de Cuisson (min) :\u0020</string>
+    <string name="PrepMin">Preparation (min) :\u0020</string>
 
 </resources>
